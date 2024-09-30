@@ -24,7 +24,7 @@ export const getAllMessages=catchAsyncErrors(async(req,res,next)=>{
     })
 })
 
-export const deleteMEssage=catchAsyncErrors(async(req,res,next)=>{
+export const deleteMessage=catchAsyncErrors(async(req,res,next)=>{
     const {id}=req.params;
     const message=Message.findById(id);
     if(!message){
