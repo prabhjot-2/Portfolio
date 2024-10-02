@@ -8,6 +8,8 @@ import { errorMiddleware } from "./middlewares/error.js";
 import messageRouter from "./routes/messageRoutes.js";
 import userRouter from "./routes/userRoutes.js";
 import timelineRouter from "./routes/timelineRoutes.js";
+import applicationRouter from "./routes/softwareApplicationRoutes.js";
+
 
 
 
@@ -32,7 +34,7 @@ app.use(fileUpload({
 app.use("/api/v1/message",messageRouter)
 app.use("/api/v1/user",userRouter)
 app.use("/api/v1/timeline",timelineRouter)
-
+app.use("/api/v1/softwareapplication",applicationRouter)
 
 
 dbConnection();
