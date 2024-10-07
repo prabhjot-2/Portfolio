@@ -12,11 +12,6 @@ import applicationRouter from "./routes/softwareApplicationRoutes.js";
 import skillRouter from "./routes/skillRoutes.js";
 import projectRouter from "./routes/projectRoutes.js";
 
-
-
-
-
-
 const app=express();
 dotenv.config({path:"./config/.env"})
 
