@@ -10,6 +10,8 @@ import userRouter from "./routes/userRoutes.js";
 import timelineRouter from "./routes/timelineRoutes.js";
 import applicationRouter from "./routes/softwareApplicationRoutes.js";
 import skillRouter from "./routes/skillRoutes.js";
+import projectRouter from "./routes/projectRoutes.js";
+
 
 
 
@@ -38,6 +40,8 @@ app.use("/api/v1/user",userRouter)
 app.use("/api/v1/timeline",timelineRouter)
 app.use("/api/v1/softwareapplication",applicationRouter)
 app.use("/api/v1/skill",skillRouter)
+app.use("/api/v1/project",projectRouter)
+
 
 
 
