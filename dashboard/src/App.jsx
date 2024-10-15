@@ -11,8 +11,21 @@ import ForgotPassword from "./pages/ForgotPassword";
 import ResetPassword from "./pages/ResetPassword";
 import ManageTimeline from "./pages/ManageTimeline";
 import ViewProject from "./pages/ViewProject";
+import { useDispatch } from "react-redux";
+import { getUser } from "./store/slices/userSlice";
+import { getAllTimeline } from "./store/slices/timelineSlice";
+import { getAllMessages } from "./store/slices/messageSlice";
 
 function App() {
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getUser());
+    dispatch(getAllTimeline());
+    dispatch(getAllMessages());
+  }, []);
+
   return (
     <Router>
       <Routes>
