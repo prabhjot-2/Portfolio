@@ -10,6 +10,7 @@ import {
   import { Button } from "@/components/ui/button";
   import SpecialLoadingButton from "./SpecialLoadingButton";
 import { Label } from "@/components/ui/label";
+import { Image } from "lucide-react";
   
   const AddSkill = () => {
     const [title, setTitle] = useState("");
@@ -105,7 +106,7 @@ import { Label } from "@/components/ui/label";
                     <div className="mt-2 flex justify-center rounded-lg border border-dashed border-gray-900/25 px-6 py-10">
                       <div className="text-center">
                         {svgPreview ? (
-                          <img
+                          <Image
                             className="mx-auto h-12 w-12 text-gray-300"
                             viewBox="0 0 24 24"
                             src={svgPreview ? `${svgPreview}` : "/docHolder.jpg"}
