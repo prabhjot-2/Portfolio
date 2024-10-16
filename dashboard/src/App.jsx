@@ -16,6 +16,7 @@ import { getUser } from "./store/slices/userSlice";
 import { getAllTimeline } from "./store/slices/timelineSlice";
 import { getAllMessages } from "./store/slices/messageSlice";
 import { getAllSkills } from "./store/slices/skillSlice";
+import { getAllSoftwareApplications } from "./store/slices/softwareApplicationSlice";
 
 function App() {
 
@@ -26,6 +27,7 @@ function App() {
     dispatch(getAllTimeline());
     dispatch(getAllMessages());
     dispatch(getAllSkills());
+    dispatch(getAllSoftwareApplications())
 
   }, []);
 
