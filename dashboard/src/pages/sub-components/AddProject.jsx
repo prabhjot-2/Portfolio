@@ -7,7 +7,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
-import { Image, Link } from "lucide-react";
+import { Link } from "lucide-react";
 import { useDispatch, useSelector } from "react-redux";
 import { toast } from "react-toastify";
 import {
@@ -17,8 +17,6 @@ import {
   resetProjectSlice,
 } from "@/store/slices/projectSlice";
 import SpecialLoadingButton from "./SpecialLoadingButton";
-import { Label } from "@/components/ui/label";
-import { Button } from "@/components/ui/button";
 
 const AddProject = () => {
   const [title, setTitle] = useState("");
@@ -82,9 +80,9 @@ const AddProject = () => {
               </h2>
               <div className="mt-10 flex flex-col gap-5">
                 <div className="w-full sm:col-span-4">
-                  <Label className="block text-sm font-medium leading-6 text-gray-900">
+                  <label className="block text-sm font-medium leading-6 text-gray-900">
                     Project Title
-                  </Label>
+                  </label>
                   <div className="mt-2">
                     <div className="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600">
                       <input
@@ -98,9 +96,9 @@ const AddProject = () => {
                   </div>
                 </div>
                 <div className="w-full sm:col-span-4">
-                  <Label className="block text-sm font-medium leading-6 text-gray-900">
+                  <label className="block text-sm font-medium leading-6 text-gray-900">
                     Description
-                  </Label>
+                  </label>
                   <div className="mt-2">
                     <div className="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600">
                       <Textarea
@@ -112,9 +110,9 @@ const AddProject = () => {
                   </div>
                 </div>
                 <div className="w-full sm:col-span-4">
-                  <Label className="block text-sm font-medium leading-6 text-gray-900">
+                  <label className="block text-sm font-medium leading-6 text-gray-900">
                     Technologies Used In This Project
-                  </Label>
+                  </label>
                   <div className="mt-2">
                     <div className="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600">
                       <Textarea
@@ -126,9 +124,9 @@ const AddProject = () => {
                   </div>
                 </div>
                 <div className="w-full sm:col-span-4">
-                  <Label className="block text-sm font-medium leading-6 text-gray-900">
+                  <label className="block text-sm font-medium leading-6 text-gray-900">
                     Stack
-                  </Label>
+                  </label>
                   <div className="mt-2">
                     <div className="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600">
                       <Select
@@ -192,7 +190,6 @@ const AddProject = () => {
                     </div>
                   </div>
                 </div>
-                
                 <div className="w-full sm:col-span-4">
                   <label className="block text-sm font-medium leading-6 text-gray-900">
                     Project Link
@@ -244,11 +241,11 @@ const AddProject = () => {
                       )}
 
                       <div className="mt-4 flex text-sm leading-6 text-gray-600">
-                        <Label
+                        <label
                           htmlFor="file-upload"
                           className="relative cursor-pointer rounded-md bg-white font-semibold text-indigo-600 focus-within:outline-none focus-within:ring-2 focus-within:ring-indigo-600 focus-within:ring-offset-2 hover:text-indigo-500"
                         >
-                          <span>Upload a File</span>
+                          <span>Upload a file</span>
                           <input
                             id="file-upload"
                             name="file-upload"
@@ -256,11 +253,11 @@ const AddProject = () => {
                             className="sr-only"
                             onChange={handleSvg}
                           />
-                        </Label>
+                        </label>
                         <p className="pl-1">or drag and drop</p>
                       </div>
                       <p className="text-xs leading-5 text-gray-600">
-                        PNG,JPG,GIF up to 10MB
+                        PNG, JPG, GIF up to 10MB
                       </p>
                     </div>
                   </div>
@@ -276,12 +273,12 @@ const AddProject = () => {
                 width={"w-56"}
               />
             ) : (
-              <Button
+              <button
                 type="submit"
                 className="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 w-56"
               >
                 Add Project
-              </Button>
+              </button>
             )}
           </div>
         </form>

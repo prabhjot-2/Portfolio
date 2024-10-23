@@ -330,7 +330,7 @@ const HomePage = () => {
           case "Add Project":
             return <AddProject />;
             break;
-          case "Add Skills":
+          case "Add Skill":
             return <AddSkill />;
             break;
           case "Add Uses":

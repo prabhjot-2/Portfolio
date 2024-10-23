@@ -4,8 +4,8 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
-// import { clearAllUserErrors } from "@/store/slices/userSlice";
-import { clearAllForgotResetPassErrors, forgotPassword } from "@/store/slices/forgotResetPasswordSlice";
+import { clearAllUserErrors } from "@/store/slices/userSlice";
+import { forgotPassword } from "@/store/slices/forgotResetPasswordSlice";
 import { toast } from "react-toastify";
 import SpecialLoadingButton from "./sub-components/SpecialLoadingButton";
 
@@ -25,7 +25,7 @@ const ForgotPassword = () => {
   useEffect(() => {
     if (error) {
       toast.error(error);
-      dispatch(clearAllForgotResetPassErrors());
+      dispatch(clearAllUserErrors());
     }
     if (isAuthenticated) {
       navigateTo("/");

@@ -68,13 +68,12 @@ const Dashboard = () => {
   );
 
   const [appId, setAppId] = useState(null);
-  
-  const dispatch = useDispatch();
   const handleDeleteSoftwareApp = (id) => {
     setAppId(id);
     dispatch(deleteSoftwareApplication(id));
   };
 
+  const dispatch = useDispatch();
   useEffect(() => {
     if (skillError) {
       toast.error(skillError);
