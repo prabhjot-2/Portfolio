@@ -80,12 +80,25 @@ userSchema.methods.comparePassword = async function (enteredPassword) {
   return await bcrypt.compare(enteredPassword, this.password);
 };
 
+// userSchema.methods.generateJsonWebToken = function () {
+//   return jwt.sign({ id: this._id }, process.env.JWT_SECRET_KEY, {
+//     expiresIn:"100d",
+//   });
+// };
 userSchema.methods.generateJsonWebToken = function () {
-  return jwt.sign({ id: this._id }, process.env.JWT_SECRET_KEY, {
-    expiresIn: process.env.JWT_EXPIRES,
-  });
+  if (!process.env.JWT_SECRET_KEY) {
+    throw new Error("JWT_SECRET_KEY is not defined");
+  }
+  
+  try {
+    return jwt.sign({ id: this._id }, process.env.JWT_SECRET_KEY, {
+      expiresIn: "100d" // Correctly formatted time span
+});
+  } catch (error) {
+    console.error('JWT Error:', error);
+    throw error;
+  }
 };
-
 
 //Generating Reset Password Token
 userSchema.methods.getResetPasswordToken = function () {

@@ -11,7 +11,9 @@ export const register = catchAsyncErrors(async (req, res, next) => {
     return next(new ErrorHandler("Avatar Required!", 400));
   }
   const { avatar, resume } = req.files;
-
+  console.log(`avatar`,avatar);
+  console.log(`resyme:`,resume);
+  
   //POSTING AVATAR
   const cloudinaryResponseForAvatar = await cloudinary.uploader.upload(
     avatar.tempFilePath,
