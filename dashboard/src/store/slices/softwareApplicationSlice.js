@@ -74,7 +74,7 @@ export const getAllSoftwareApplications = () => async (dispatch) => {
   );
   try {
     const response = await axios.get(
-      "http://localhost:4000api/v1/softwareapplication/getall",
+      "http://localhost:4000/api/v1/softwareapplication/getall",
       { withCredentials: true }
     );
     dispatch(
